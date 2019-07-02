@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  baota:
+    image: ruiban/baota:base
+    container_name: baota
+    restart: always
+    tty: true
+    #privileged: true
+    cap_add:
+    - ALL
+    expose:
+    - '80'
+    - '443'
+    - '888'
+    - '3306'
+    - '8888'
+    volumes:
+    - ~/nbn/baota/www/wwwroot:/www/wwwroot
+    - ~/nbn/baota/www/backup:/www/backup
+    networks:
+    - baota
+
+networks:
+  baota:
+    external:
+      name: docker

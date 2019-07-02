@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  nginx:
+    image: ruiban/nginx:update
+    container_name: nginx
+    restart: always
+    tty: true
+    #privileged: true
+    cap_add:
+      - ALL
+    ports:
+    - '80:80'
+    - '443:443'
+    - '888:888'
+    - '3306:3306'
+    - '8888:8888'
+    - '19999:19999'
+    volumes:
+    - ~/nbn/nginx/conf.d:/etc/nginx/conf.d
+    - ~/nbn/nginx/log:/var/log/nginx
+    - ~/nbn/nginx/www:/var/www
+    networks:
+      nginx:
+
+networks:
+  nginx:
+    external: 
+      name: docker
