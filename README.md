@@ -1,0 +1,2 @@
+# nbn
+nginx && baota && node
