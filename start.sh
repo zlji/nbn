@@ -6,4 +6,10 @@ if [ -z "$net" ]; then
   docker network create docker
 fi
 
-$(dirname $0)/.docker/compose.sh up -d
+service=$1
+if [ -z "$service" ]; then
+  $(dirname $0)/.docker/composeAll.sh up -d
+else
+  $(dirname $0)/.docker/compose.sh $service up -d
+fi
+

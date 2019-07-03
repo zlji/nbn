@@ -17,9 +17,9 @@ services:
     - '8888:8888'
     - '19999:19999'
     volumes:
-    - ~/nbn/nginx/conf.d:/etc/nginx/conf.d
-    - ~/nbn/nginx/log:/var/log/nginx
-    - ~/nbn/nginx/www:/var/www
+    - ./conf.d:/etc/nginx/conf.d
+    - ./log:/var/log/nginx
+    - ./www:/var/www
     networks:
       nginx:
 
