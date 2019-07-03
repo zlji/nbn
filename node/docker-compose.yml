@@ -6,9 +6,9 @@ services:
     container_name: node
     restart: always
     tty: true
-    #privileged: true
-    cap_add: 
-    - ALL
+    privileged: true
+    #cap_add: 
+    #- ALL
     expose:
     - '80'
     - '443'

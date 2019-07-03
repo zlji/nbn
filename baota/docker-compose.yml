@@ -2,13 +2,13 @@ version: '3'
 
 services:
   baota:
-    image: ruiban/baota:base
+    image: ruiban/baota:systemd
     container_name: baota
     restart: always
     tty: true
-    #privileged: true
-    cap_add:
-    - ALL
+    privileged: true
+    #cap_add:
+    #- ALL
     expose:
     - '80'
     - '443'
